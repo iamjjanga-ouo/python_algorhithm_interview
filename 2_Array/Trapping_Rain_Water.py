@@ -39,7 +39,7 @@ def trap(height: List[int]) -> int:
 
             # 이전과의 차이만큼 물 높이 처리
             distance = i - stack[-1] - 1
-            waters = min(height[i], height[stack[-1]] - height[top])
+            waters = min(height[i], height[stack[-1]]) - height[top]
 
             volume += distance * waters
 
@@ -48,6 +48,7 @@ def trap(height: List[int]) -> int:
 
 
 if __name__ == '__main__':
-    height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+    # height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+    height = [4, 2, 0, 3, 2, 5]
     result = trap(height)
     print(result)
